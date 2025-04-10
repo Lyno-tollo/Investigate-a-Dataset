@@ -1,43 +1,54 @@
-# Investigate-a-Dataset
+# Project: No-show appointments
 
-# Project: Data Wrangling
+## Table of Contents
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#wrangling">Data Wrangling</a></li>
+<li><a href="#eda">Exploratory Data Analysis</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
 
-
+<a id='intro'></a>
 ## Introduction
 
-Generally, any good Data Analyst should be able to gather information from various sources,assess any problems in the data and resolve any quality and tidiness issues. Quality and tidiness in this aspect refers to the content and structural issues respectively.
-In Udacity's Data Analyst Nanodegree program that i enrolled in, i got introduced to various data wrangling methods, analysis and visualizations. In one of the data wrangling projects, i managed to collect,assess,clean,analyze and visualize the data. The dataset i used in this project was WeRateDogs from twitter where dogs are rated based on humorous tweets. The main objective of this project was data wrangling. Data wrangling is the process of collecting,assessing and cleaning data into a valid format for futher analysis. Here, i used various python libraries and functions.
-### Gathering Data:
-Three datasets were gathered using different methods in this project:
+### Dataset Description 
+ 
+This dataset collects information from 100k medical appointments in Brazil and is focussed on the question of whether or not patients show up for their appointment. This No-show dataset has 14 columns with the description below:
+- *'PatientId'* - Identification of a patient
+- *'AppointmentID'* - Identifies each appointment
+- *'Gender'* - Male or Female
+- *'ScheduledDay'* - The actual day of the appointment
+- *'AppointmentDay'* - The day someone registered the appointment
+- *'Age'* - How old the patient is
+- *'Neighbourhood'* - Where the appointment takes place
+- *'Scholarship'* - True or False (whether the patient has Government sponsirship or no)
+- *'Hipertension'* - True or False (whether the patient has the Hipertension or no)
+- *'Diabetes'* - True or False (whether the patient is diabetic or no)
+- *'Alcoholism'* - True of False(whether the patient is an alcoholic or no)
+- *'Handcap'* - True of False(whether the patient is an Hancapped or no)
+- *'SMS_recieved'* - 1 or more messages sent to the patient
+- *'No-show'* - True or False (whether the patient showed up for the appointment or no)
 
-- **Twitter Archive Enhanced File**:
-This dataset was downloaded manually and read into a dataframe before further actions on the data were taken. The data contained tweets upto August 2017.
-- **Image Prediction File**:
-This dataset contained images from tweets which predicted the names and breeds of dogs using these images through a neural network mechanism. This dataset was downloaded programmatically using **Requests**, one of pythons libraries.
-- **JSON File**:
-This dataset was gatherered using the Twitter API for each tweet's JSON data using tweepy, one of twitter's libraries. This data was saved and later read line by line.
 
-### Assessing Data
-Both visual and programatic assessments were employed in this stage. The main aim was to identify any quality and tidiness issues in the three dataframes.
-- **Quality**: The issues in this category are issues regarding the content of the data and have four dimensions of Completeness, Accurscy, Validity and Consistency.
-- **Tidiness**: The issues in this category relate to the structure of the data for instance, each variable forms a column and each observation forms a row.
+### Question(s) for Analysis
 
-Visual assessment helped me in identifying accuracy and consistency issues.
-Programmatic assessment was the source of most quality issues such as incorrect datatypes, duplicates and missing data.
+#### 1.What is the relationship between Gender and No-show?
+#### 2.Is SMS_received likely to have an influence on No-show?
+ 
+ 
+ <a id='conclusions'></a>
+## Conclusions
 
-### Cleaning
-This means dealing with issues identified in assessments in order to end up with clean data that can be analyzed. This could mean correcting,removing and replacing the data to fix issues identified,or ensuring each variable forms a column and each observation is a row.
-During my claning, i used the provided cleaning best practice of **Define, Code  and Test**
+ ### Results:
+ Our data suggests that: 
+  1. There is a higher proportion of females than males who showed up for the appointment
+  2. There is a higher number of people that showed up and did not receive an sms when compared to patients who received an sms and did show up.
+  
+### Limitations:
+There are a number of limitations with our data: 
+ 1. Most of our variables are categorical which does not allow for a high level of statistical method that can be used to provide correlations
+ 2. We do not have a lot of details for certain factors to draw conclusions . For instance, the sms_received, the data shows that no_showers are likely to recieve an SMS. This may seem counter intutive, but we do not have information on the conditions of when the sms is sent. For example, they may target no_showers with SMS, or they may send the SMS once the patient has not checked in 30 minutes prior to thier appointment. 
 
-### Storing
-Finally, after cleaning my datasets, i merged the three to form a master dataset on which analysis was to be performed on.
+## Acknoledgement
 
-### Analyzing
-I perfomed anlaysis on the cleaned datasets and got insights which i used in  creation of visualizations.
-- **Most Popular Dog**:
-The most popular dogs were Alfie,Walter and Winnie.
-- **Source of tweets**
-The top source of tweets was Iphone with 90 per cent.
-
-### Conclusion
-Several other insights can be drwan from this dataset apart from what i have analyzed. The requirements to pass this project was to write two reports on my data wrangling efforts and analysis where the analysis report was more of like a blog. I had fun doing this project and i thank you for reading.
+A very special appreciation to ALX Africa scholarship program without which i would not have been able to participate in this program. In addition i'm very grateful to Udacity for their well packaged and sound curriculum. More power to your elbows. Finally, thanks to my parents, teachers,mentors,friends,colleagues and all who have helped me to be who i am today. God Bless!
